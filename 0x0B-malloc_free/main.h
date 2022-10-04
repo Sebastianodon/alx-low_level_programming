@@ -1,23 +1,10 @@
-#include "main.h"
-
-/**
-* create_array -> creating array
-* @size: size of array to be created
-* @c: character an array is initialized with
-* Return: a pointer to an array
-*/
-char *create_array(unsigned int size, char c)
-{
-	unsigned int i;
-	char *s;
-
-	if (size == 0)
-		return (NULL);
-	s = (char *)malloc(size * sizeof(char));
-	if (s == NULL)
-		return (NULL);
-	for (i = 0; i < size; i++)
-		s[i] = c;
-
-	return (s);
-}
+#ifndef MAIN_H
+#define MAIN_H
+#include <stddef.h>
+#include <stdlib.h>
+int _putchar(char c);
+char *create_array(unsigned int size, char c);
+char *str_concat(char *s1, char *s2);
+int **alloc_grid(int width, int height);
+void free_grid(int **grid, int height);
+#endif
